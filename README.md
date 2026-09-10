@@ -1,58 +1,85 @@
 # Morse Station
 
-A two-way Morse code translator built with React and Vite. Type text and get Morse code, type Morse code and get text back — both panels stay in sync as you type. Includes an audible playback of the signal and a built-in cheat sheet.
+![Morse Station Screenshot](sample.png)
+
+A fast, interactive Morse code translator that works both ways in real time. Type text to generate Morse code, or enter Morse code to decode it instantly. Both panels stay perfectly in sync, with accurate audio playback and a built-in reference guide.
+
+**Live Demo:** https://your-vercel-link.vercel.app
+
+---
 
 ## Features
 
-- **Text ⇄ Morse, live** — edit either panel and the other updates instantly.
-- **Play signal** — hear the Morse code as actual tones, timed to standard dot/dash/gap ratios, with a lamp indicator that flashes in sync.
-- **Cheat sheet** — a slide-in reference panel covering letters, numbers, and punctuation.
-- **Copy buttons** for both text and Morse output.
-- Supports the full standard punctuation set (`. , ? ' ! / ( ) & : ; = + - _ " $ @`), not just letters and numbers.
+* **Real-time translation** — Edit either text or Morse input and see instant updates.
+* **Accurate audio playback** — Hear Morse code as timed tones (dots, dashes, and gaps) following standard ratios, with a synchronized visual indicator.
+* **Built-in cheat sheet** — Slide-in panel covering letters, numbers, and punctuation.
+* **Copy with one click** — Quickly copy text or Morse output.
+* **Full punctuation support** — Includes `. , ? ' ! / ( ) & : ; = + - _ " $ @`.
 
-## Tech stack
+---
 
-- [React 18](https://react.dev/)
-- [Vite](https://vitejs.dev/) — dev server and build tool
-- [lucide-react](https://lucide.dev/) — icons
-- Plain CSS (no framework) for styling
+## Tech Stack
 
-## Running locally
+* React 18
+* Vite — development server and build tool
+* lucide-react — icons
+* Plain CSS for styling (no framework)
+
+---
+
+## Getting Started
+
+### Install dependencies
 
 ```bash
 npm install
+```
+
+### Run locally
+
+```bash
 npm run dev
 ```
 
-This starts a local dev server (Vite will print the URL, typically `http://localhost:5173`).
+Starts a development server (usually at `http://localhost:5173`).
 
-To build a production bundle:
+### Build for production
 
 ```bash
 npm run build
-npm run preview   # preview the production build locally
+npm run preview
 ```
 
-## Project structure
+---
+
+
+---
+
+## Project Structure
 
 ```
 morse-station/
-├── index.html          # HTML entry point
+├── index.html
 ├── package.json
 ├── vite.config.js
 ├── src/
-│   ├── main.jsx         # React entry point
-│   ├── App.jsx          # Morse Station component (all app logic + UI)
-│   └── index.css        # Minimal global reset
+│   ├── main.jsx
+│   ├── App.jsx
+│   └── index.css
 └── README.md
 ```
 
-## How the Morse conversion works
+---
 
-- Encoding uppercases the input, maps each character to its Morse code, joins letters within a word with a single space, and joins words with `" / "`.
-- Decoding does the reverse: splits on `" / "` for words, splits on whitespace for letters within a word, and looks up each code.
-- Unrecognized characters are simply skipped rather than causing an error.
+## How It Works
+
+* **Encoding:** Converts text to uppercase, maps each character to Morse, separates letters with spaces and words with `" / "`.
+* **Decoding:** Splits Morse by `" / "` for words and spaces for characters, then maps each sequence back to text.
+* **Error handling:** Unsupported characters are ignored gracefully.
+
+---
 
 ## License
 
-MIT — do whatever you'd like with it.
+MIT License — free to use, modify, and distribute.
+
