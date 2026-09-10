@@ -1,10 +1,12 @@
 # Morse Station
 
-![Morse Station Screenshot](sample.png)
+
 
 A fast, interactive Morse code translator that works both ways in real time. Type text to generate Morse code, or enter Morse code to decode it instantly. Both panels stay perfectly in sync, with accurate audio playback and a built-in reference guide.
 
-**Live Demo:** https://your-vercel-link.vercel.app
+**Live Demo:** https://morsestation.vercel.app
+
+![Morse Station Sample](sample.png)
 
 ---
 
